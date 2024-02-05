@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package example;
+
+// サービスの定義
+service APIService {
+  rpc CallAPI (APIRequest) returns (stream APIResponse) {}
+}
+
+// APIリクエスト
+message APIRequest {
+  string data = 1;
+}
+
+// APIレスポンス
+message APIResponse {
+  string result = 1;
+  bool is_audio = 2;
+}
